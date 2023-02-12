@@ -2,6 +2,10 @@ package HW01;
 
 public class Tea extends HotDrink{
     Integer temperature;
+    @Override
+    public String toString() {
+        return String.format("Наименование товара - %s. Цена товара - %d. Объем товара - %d. Температура товара - %d", getName(), getPrice(), getVolume(), getTemperature());
+    }
     public Tea(int price, int volume, String name, int temperature) {
         super(price, volume, name);
         this.temperature = temperature;

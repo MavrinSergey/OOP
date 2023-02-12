@@ -4,6 +4,13 @@ public class HotDrink {
     String name;
     int price;
     int volume;
+
+    @Override
+    public String toString() {
+        return String.format("Наименование товара - %s. Цена товара - %d. Объем товара - %d", getName(), getPrice(), getVolume());
+    }
+
+
     public HotDrink(int price, int volume, String name) {
         this.name = name;
         this.price = price;

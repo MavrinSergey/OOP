@@ -1,6 +1,7 @@
 package HW01;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,5 +18,10 @@ public class Main {
 
         HotDrinksVendingMachine.initProduct(availableAssortment);
         HotDrinksVendingMachine.getProduct("java", 200, 90);
+
+        Iterator<Tea> iterator = availableAssortment.listIterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
     }
 }

@@ -1,9 +1,9 @@
-package HW04;
+package HW05;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HotDrinksVendingMachine<T extends HotDrink> {
+public class HotDrinksVendingMachine<T extends Tea> {
     List<T> assortment = new ArrayList<>();
 
     public void initProduct(ArrayList<T> list){

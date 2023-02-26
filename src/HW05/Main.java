@@ -1,16 +1,14 @@
-package HW04;
+package HW05;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import static HW04.HotDrinksVendingMachine.*;
-
 public class Main {
     public static void main(String[] args) {
-        Tea black = new Tea(50, 230, "Greenfield", 70);
-        Tea green = new Tea(55,  "Tess", 65);
-        Tea red = new Tea(60, 250, "Ahmad");
-        Tea defult = new Tea(50, "java");
+        Tea black = TeaBuilder.getInstance().setName("Greenfield").setPrice(50).setVolume(230).setTemperature(70).build();
+        Tea green = TeaBuilder.getInstance().setName("Tess").setPrice(55).setTemperature(70).build();
+        Tea red = TeaBuilder.getInstance().setName("Ahmad").setPrice(60).setVolume(250).build();
+        Tea defult = TeaBuilder.getInstance().setName("java").setPrice(50).build();
 
         ArrayList<Tea> availableAssortment = new ArrayList<>();
         availableAssortment.add(black);
@@ -21,10 +19,9 @@ public class Main {
         var obobchenie = new HotDrinksVendingMachine();
         obobchenie.initProduct(availableAssortment);
         obobchenie.getProduct("java", 200, 90);
-
-        Iterator<Tea> iterator = availableAssortment.listIterator();
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
+//
+        for (Tea tea : availableAssortment) {
+            System.out.println(tea.toString());
         }
     }
 }

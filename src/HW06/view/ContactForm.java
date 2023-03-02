@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 
 public class ContactForm extends JFrame {
-    JButton admin_button, user_button;
+    protected JButton admin_button, user_button;
 
     public ContactForm() {
         super("VendingMachine");
@@ -27,7 +27,7 @@ public class ContactForm extends JFrame {
         user_button.addActionListener(new UserButtonEventManager());
     }
 
-    class AdminButtonEventManager implements ActionListener {
+    static class AdminButtonEventManager implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -40,7 +40,7 @@ public class ContactForm extends JFrame {
             formAdmin.setVisible(true);
         }
     }
-    class UserButtonEventManager implements ActionListener {
+    static class UserButtonEventManager implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {

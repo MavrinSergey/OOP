@@ -1,10 +1,12 @@
 package HW06.model;
 
 public class Tea extends HotDrink {
-    Integer temperature;
+    private Integer temperature;
     @Override
     public String toString() {
-        return String.format("Наименование товара - %s. Цена товара - %d. Объем товара - %d. Температура товара - %d", getName(), getPrice(), getVolume(), getTemperature());
+        return String.format(
+                "Наименование товара - %s. Цена товара - %d. Объем товара - %d. Температура товара - %d",
+                getName(), getPrice(), getVolume(), getTemperature());
     }
 
     public Integer getTemperature() {

@@ -1,9 +1,9 @@
 package HW06.model;
 
 public class HotDrink {
-    String name;
-    int price;
-    int volume;
+    private String name;
+    private int price;
+    private int volume;
 
     @Override
     public String toString() {

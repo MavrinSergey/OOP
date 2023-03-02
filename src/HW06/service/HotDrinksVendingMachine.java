@@ -9,9 +9,8 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 
 public class HotDrinksVendingMachine extends Tea {
-    public static String getDrinks;
-    String separator = File.separator;
-    String path = "." + separator + "src" + separator + "HW06" + separator + "user.txt";
+    private final String separator = File.separator;
+    private final String path = "." + separator + "src" + separator + "HW06" + separator + "user.txt";
     Logger logger = Logger.getAnonymousLogger();
     public void saveDrink(Tea tea) {
         try(FileWriter fileWriter = new FileWriter(path, true)){
@@ -25,13 +24,18 @@ public class HotDrinksVendingMachine extends Tea {
     public String getDrink() throws FileNotFoundException {
         File file = new File(path);
         StringBuilder str = new StringBuilder();
+        String temp;
         Scanner scanner = new Scanner(file);
         while (scanner.hasNextLine()) {
             str.append(scanner.nextLine());
             str.append("\n");
         }
         scanner.close();
-        return str.toString();
+        temp = str.toString();
+        if (temp instanceof String){
+            System.out.println("Yes");
+        }
+        return temp;
     }
 
 }

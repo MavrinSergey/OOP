@@ -10,8 +10,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class PanelUser extends JFrame {
-    JTextField name_field, price_field;
-    JButton addProduct_button;
+    protected JTextField name_field, price_field;
+    protected JButton addProduct_button;
 
     public PanelUser() {
         super("PanelUser");

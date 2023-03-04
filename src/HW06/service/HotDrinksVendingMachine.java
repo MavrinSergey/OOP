@@ -12,7 +12,7 @@ public class HotDrinksVendingMachine extends Tea {
     private final String separator = File.separator;
     private final String path = "." + separator + "src" + separator + "HW06" + separator + "user.txt";
     Logger logger = Logger.getAnonymousLogger();
-    public void saveDrink(Tea tea) {
+    public void saveAddDrink(Tea tea) {
         try(FileWriter fileWriter = new FileWriter(path, true)){
             fileWriter.write(tea.toString());
             fileWriter.append('\n');
@@ -31,11 +31,7 @@ public class HotDrinksVendingMachine extends Tea {
             str.append("\n");
         }
         scanner.close();
-        temp = str.toString();
-        if (temp instanceof String){
-            System.out.println("Yes");
-        }
-        return temp;
+        return str.toString();
     }
 
 }

@@ -1,6 +1,6 @@
 package HW06.model;
 
-public class HotDrink {
+public abstract class HotDrink {
     private String name;
     private int price;
     private int volume;

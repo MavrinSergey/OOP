@@ -27,7 +27,7 @@ public class ContactForm extends JFrame {
         user_button.addActionListener(new UserButtonEventManager());
     }
 
-    static class AdminButtonEventManager implements ActionListener {
+    class AdminButtonEventManager implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -40,11 +40,16 @@ public class ContactForm extends JFrame {
             formAdmin.setVisible(true);
         }
     }
-    static class UserButtonEventManager implements ActionListener {
+    class UserButtonEventManager implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            PanelUser formUser = new PanelUser();
+            PanelUser formUser = null;
+            try {
+                formUser = new PanelUser();
+            } catch (FileNotFoundException ex) {
+                throw new RuntimeException(ex);
+            }
             formUser.setVisible(true);
         }
     }

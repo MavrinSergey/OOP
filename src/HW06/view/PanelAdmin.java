@@ -25,13 +25,7 @@ public class PanelAdmin extends JFrame {
         container.setLayout(new GridLayout(4,2,2,10));
 
         JLabel list = new JLabel("listDrink: ");
-        String dfsd = "dfdfgdfgdfgddfgdfg";
-
-//        info = new JTextArea("Здесь должен выводится список всех доступных напитков!!!\n но я не смог это сделать, так, что список доступен к просмотру в консоле)))))))");
-
         info = new JTextArea(hdvm.getDrink());
-
-        info.setBounds(10,30,200,200);
 
         JLabel name = new JLabel("drink name: ");
         name_field = new JTextField("", 2);
@@ -60,12 +54,11 @@ public class PanelAdmin extends JFrame {
             int price = Integer.parseInt(price_field.getText());
             Tea tea = TeaBuilder.getInstance().setName(name).setPrice(price).build();
 
-            hdvm.saveDrink(tea);
+            hdvm.saveAddDrink(tea);
             name_field.setText("");
             price_field.setText("");
-            info.setText("");
             try {
-                info = new JTextArea(hdvm.getDrink());
+                info.setText(hdvm.getDrink());
             } catch (FileNotFoundException ex) {
                 throw new RuntimeException(ex);
             }
